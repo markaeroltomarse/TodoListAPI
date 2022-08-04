@@ -5,6 +5,8 @@ const app = express()
 //Config
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+
+//.env
 require('dotenv/config')
 
 
@@ -22,8 +24,6 @@ const {
 } = require('./middlewares/errors')
 app.use(errorHandler)
 
-//dotenv
-require('dotenv/config')
 
 // Start the app
 const PORT = process.env.PORT || 5000
